@@ -18,4 +18,8 @@ public class CircularBuffer<T> {
     buffer[head] = element;
     return head;
   }
+
+  public T get(int idx) {
+    return buffer[idx % buffer.length];
+  }
 }

@@ -14,7 +14,9 @@ public class MaxLowerOrEqual {
       int midIdx = (leftIdx + rightIdx) / 2;
       if (sortedArr[midIdx] <= x) {
         leftIdx = midIdx;
-      } else rightIdx = midIdx;
+      } else {
+        rightIdx = midIdx;
+      }
     }
     return leftIdx;
   }

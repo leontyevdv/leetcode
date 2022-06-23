@@ -1,20 +1,26 @@
 package engineering.oddsystems.leetcode.arrays;
 
-import java.util.OptionalDouble;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.stream.IntStream;
-import org.junit.jupiter.api.Test;
+import java.util.stream.Stream;
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.TestFactory;
 
 class CircularBufferTest {
 
-  @Test
-  public void testBuffer() {
-    CircularBuffer<String> cb = new CircularBuffer<>(String.class, 10);
+  @TestFactory
+  Stream<DynamicTest> dynamicTestsFromStreamInJava8() {
+    int capacity = 10;
+    CircularBuffer<String> cb = new CircularBuffer<>(String.class, capacity);
+    IntStream.range(0, capacity).forEach(it -> cb.put(String.valueOf(it)));
 
-    OptionalDouble average =
-        IntStream.range(0, 100)
-            .map(num -> cb.put(String.valueOf(num)))
-            .peek(System.out::println)
-            .average();
+    return IntStream.range(0, 100)
+        .boxed()
+        .map(
+            idx ->
+                DynamicTest.dynamicTest(
+                    "Index: " + idx,
+                    () -> assertEquals(String.valueOf(idx % capacity), cb.get(idx))));
   }
-
 }
