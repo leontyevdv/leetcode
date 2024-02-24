@@ -27,7 +27,7 @@ public class LongestPalindrome {
       for (int j = i; j < n; j++) {
         boolean flag = true;
 
-        // Checking for a palindromic subtring
+        // Checking for a palindromic substring
         for (int k = 0; k < (j - i + 1) / 2; k++) {
           if (str.charAt(i + k) != str.charAt(j - k)) {
             flag = false;

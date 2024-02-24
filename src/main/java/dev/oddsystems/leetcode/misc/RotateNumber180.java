@@ -11,6 +11,19 @@ public class RotateNumber180 {
     this.dict = new HashMap<>(dict);
   }
 
+  public boolean isValid(int input) {
+    int reversed = 0;
+    int num = input;
+    while (num > 0) {
+      int rightMost = num % 10;
+      reversed *= 10;
+      reversed += dict.get(rightMost);
+
+      num /= 10;
+    }
+    return input == reversed;
+  }
+
   public static void main(String[] args) {
     Map<Integer, Integer> dict = new HashMap<>();
     dict.put(1, 1);
@@ -26,18 +39,5 @@ public class RotateNumber180 {
 
     RotateNumber180 app = new RotateNumber180(dict);
     System.out.println(app.isValid(100));
-  }
-
-  public boolean isValid(int input) {
-    int reversed = 0;
-    int num = input;
-    while (num > 0) {
-      int rightMost = num % 10;
-      reversed *= 10;
-      reversed += dict.get(rightMost);
-
-      num /= 10;
-    }
-    return input == reversed;
   }
 }

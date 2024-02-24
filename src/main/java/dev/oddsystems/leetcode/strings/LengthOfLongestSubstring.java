@@ -7,7 +7,7 @@ import java.util.Map;
 public class LengthOfLongestSubstring {
 
   public int lengthOfLongestSubstring(String s) {
-    if (s.length() == 0) return 0;
+    if (s.isEmpty()) return 0;
 
     Map<Character, Integer> map = new HashMap<>();
     int max = 0;

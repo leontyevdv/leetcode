@@ -2,7 +2,7 @@ package dev.oddsystems.leetcode.arrays;
 
 public class BinarySearch {
 
-  boolean binary_search(int[] arr, int x) {
+  boolean find(int[] arr, int x) {
     int leftIdx = 0;
     int rightIdx = arr.length;
 

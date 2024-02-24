@@ -11,36 +11,36 @@ class BinarySearchTest {
 
   @Test
   void testSearchRightBoundaryElement() {
-    assertTrue(binarySearch.binary_search(new int[] {1, 2, 3, 4, 5}, 5));
+    assertTrue(binarySearch.find(new int[] {1, 2, 3, 4, 5}, 5));
   }
 
   @Test
   void testSearchLeftBoundaryElement() {
-    assertTrue(binarySearch.binary_search(new int[] {1, 2, 3, 4, 5}, 1));
+    assertTrue(binarySearch.find(new int[] {1, 2, 3, 4, 5}, 1));
   }
 
   @Test
   void testSearchInEvenLengthArray() {
-    assertTrue(binarySearch.binary_search(new int[] {1, 2, 3, 4, 5, 6}, 3));
+    assertTrue(binarySearch.find(new int[] {1, 2, 3, 4, 5, 6}, 3));
   }
 
   @Test
   void testSearchInOddLengthArray() {
-    assertTrue(binarySearch.binary_search(new int[] {1, 2, 3, 4, 5}, 3));
+    assertTrue(binarySearch.find(new int[] {1, 2, 3, 4, 5}, 3));
   }
 
   @Test
   void testSearchInSingleElementArray() {
-    assertTrue(binarySearch.binary_search(new int[] {3}, 3));
+    assertTrue(binarySearch.find(new int[] {3}, 3));
   }
 
   @Test
   void testSearchInEmptyArray() {
-    assertFalse(binarySearch.binary_search(new int[] {}, 3));
+    assertFalse(binarySearch.find(new int[] {}, 3));
   }
 
   @Test
   void testSearchInNegativeElementsArray() {
-    assertTrue(binarySearch.binary_search(new int[] {-5, -4, -3, -2, -1}, -3));
+    assertTrue(binarySearch.find(new int[] {-5, -4, -3, -2, -1}, -3));
   }
 }
